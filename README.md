@@ -15,6 +15,6 @@ This repository contains scripts for analyzing the DNA fingerprinting of rice va
 
 ## Usage
 
-1. Clone the repository:
+1. Clone the repository.
 2. Set your working directory to the folder containing your data and script files.
 3. Run the script.
