@@ -1,0 +1,6 @@
+adegenet
+poppr
+ape
+ggplot2
+dplyr
+pheatmap
