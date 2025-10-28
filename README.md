@@ -1,20 +1,14 @@
-# Rice-DNA-Fingerprint-Analysis
+# 水稻 InDel 指纹图谱遗传多样性分析
 
-This repository contains scripts for analyzing the DNA fingerprinting of rice varieties based on InDel markers. It includes the following features:
+本项目基于 **水稻品种 × InDel 分子标记** 的 DNA 指纹数据，开展系统性遗传多样性分析，适用于种质资源鉴定、指纹数据库构建与分子育种研究。
 
-- Genetic similarity coefficient calculation
-- NJ tree and PCoA analysis
-- Digital fingerprint generation and duplication detection
-- Minimum marker set selection for unique fingerprinting
-- Heatmap generation for DNA fingerprint data
+## 📊 分析内容
 
-## Requirements
+- ✅ **遗传相似性系数（SMC）计算**：基于等位基因完全匹配的相似性度量  
+- 🌳 **NJ 系统发育树构建**：输出高分辨率 TIFF（300 dpi, A4）与可编辑 PDF（A4）  
+- 📈 **主坐标分析（PCoA）**：可视化品种间遗传结构，标注主轴解释率  
+- 🔍 **数字指纹生成与重复检测**：识别遗传重复样本，支持 TXT/CSV 多格式输出  
+- 🎨 **DNA 指纹热图**：聚类可视化品种 × 标记矩阵，输出横向 A4 PDF 与 TIFF  
+- 🔑 **最小标记集筛选**：找出可唯一区分所有品种的最少 InDel 标记组合
 
-- R (>= 4.0)
-- Required R packages (see `requirements.txt`)
-
-## Usage
-
-1. Clone the repository.
-2. Set your working directory to the folder containing your data and script files.
-3. Run the script.
+> 💡 **特别说明**：本分析将所有整数（包括 `0`, `1`, `2`, `3`...）视为有效等位基因状态，**仅当两个品种在某标记上
