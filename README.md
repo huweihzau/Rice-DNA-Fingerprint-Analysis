@@ -22,3 +22,54 @@ This repository contains the R scripts and datasets used for the genetic and phe
 ├── LICENSE                                # License information
 ├── README.md                              # Project documentation
 └── requirements.txt                       # List of dependencies
+🛠️ Prerequisites & Installation
+The analysis is performed using R. Please ensure you have R (and RStudio recommended) installed.
+
+Quick Setup
+You can install all necessary dependencies by running the provided setup script:
+
+R
+
+source("scripts/0_install_dependencies.R")
+Alternatively, install manually:
+R
+
+install.packages(c("ggplot2", "dplyr", "corrplot", "pheatmap", "ape", "RColorBrewer", "factoextra"))
+if (!require("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+BiocManager::install("ggtree")
+🚀 Usage
+The scripts are numbered to suggest a logical workflow, though they can be run independently.
+
+1. Phenotypic Analysis
+Script: scripts/1_Correlation coefficient.R
+
+Input: data/phenotype.csv
+
+Output: Correlation matrix plots showing relationships between agronomic traits.
+
+2. Genotypic Visualization
+Script: scripts/2_DNA fingerprint.R
+
+Input: data/genotype of 38 InDel markers.csv
+
+Output: Visual representation of InDel marker distribution across varieties.
+
+3. Genetic Similarity (SMC)
+Script: scripts/3_Heatmap of SMC.R
+
+Description: Calculates the Simple Matching Coefficient (SMC) between accessions and generates a heatmap to visualize genetic relatedness.
+
+4. Population Structure (PCA)
+Script: scripts/4_Principal component analysis.R
+
+Output: PCA plots clustering the rice varieties based on their genotypic profiles.
+
+5. Variety Selection
+Script: scripts/5_Select similar varieties.R
+
+Description: Identifies and filters rice varieties that share high genetic similarity.
+
+6. Phylogenetic Analysis
+Script: scripts/6_Phylogenetic_tree.R
+
+Output: Generates UPGMA phylogenetic trees (Circular/Fan layout) with subpopulation highlighting.
