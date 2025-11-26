@@ -1,26 +1,15 @@
-# R-specific
+# R files
 .Rhistory
 .RData
-.Ruserdata
-*.Rproj.user
+.Rproj.user/
+*.Rproj
 
-# Data files (if large and not necessary to include in the repo)
-data/
-
-# Logs and temporary files
-*.log
-*.bak
-*.swp
-
-# Output directories
+# Output directory (auto-generated)
 output/
 
-# Generated files
-*.csv
-*.txt
-*.pdf
-*.tiff
-
-# Operating system files
+# OS generated files
 .DS_Store
 Thumbs.db
+
+# Logs
+*.log
