@@ -1,30 +1,24 @@
-# 水稻 InDel 指纹图谱遗传多样性分析
+# Genetic Diversity and Phenotypic Analysis of Shanlan Rice
 
-本项目基于 38个InDel 分子标记对114份山栏稻水稻品种进行鉴定，开展系统性遗传多样性分析，适用于种质资源鉴定、指纹数据库构建。
+This repository contains the R scripts and datasets used for the genetic and phenotypic analysis of Shanlan Rice resources. The project utilizes 38 InDel markers to assess genetic diversity, population structure, and phenotypic correlations among different rice accessions.
 
-## 📊 分析内容
+## 📂 Repository Structure
 
-- ✅ **遗传相似性系数（SMC）计算**：基于等位基因完全匹配的相似性度量  
-- 🌳 **NJ 系统发育树构建**：输出高分辨率 TIFF（300 dpi, A4）与可编辑 PDF（A4）  
-- 📈 **主坐标分析（PCoA）**：可视化品种间遗传结构，标注主轴解释率  
-- 🔍 **数字指纹生成与重复检测**：识别遗传重复样本，支持 TXT/CSV 多格式输出  
-- 🎨 **DNA 指纹热图**：聚类可视化品种 × 标记矩阵，输出横向 A4 PDF 与 TIFF  
-- 🔑 **最小标记集筛选**：找出可唯一区分所有品种的最少 InDel 标记组合
-
-> 💡 **特别说明**：本分析将所有整数（包括 `0`, `1`, `2`, `3`...）视为有效等位基因状态，**仅当两个品种在某标记上基因型完全相同时才计为匹配**。
-
----
-
-## 📥 输入数据格式
-
-- **文件名**：`DNA指纹图谱.csv`
-- **结构要求**：
-  - **第一列**：InDel 标记名称（如 `InD1-1`, `InD1-28`, `InD2-26`...）
-  - **第一行**：水稻品种名称（如 `SL1`, `SL2`, `SL3`...）
-  - **数据区**：每个单元格为该品种在该标记上的基因型值（整数，如 `1`, `2`, `3`）
-- **示例（前 4 行 × 前 4 品种）**：
-  ```csv
-  ,SL1,SL2,SL3,SL4
-  InD1-1,1,2,2,2
-  InD1-28,1,1,2,3
-  InD1-58,2,2,2,2
+```text
+.
+├── data/
+│   ├── genotype of 38 InDel markers.csv   # Binary genotype matrix (0/1) for 38 InDel markers
+│   └── phenotype.csv                      # Phenotypic traits data for correlation analysis
+├── output/                                # Directory for storing generated plots and results
+├── scripts/
+│   ├── 0_install_dependencies.R           # Setup script to install required R packages
+│   ├── 1_Correlation coefficient.R        # Calculates and plots phenotypic correlations
+│   ├── 2_DNA fingerprint.R                # Visualizes DNA fingerprints of the population
+│   ├── 3_Heatmap of SMC.R                 # Calculates Genetic Similarity (SMC) and plots heatmap
+│   ├── 4_Principal component analysis.R   # Performs PCA based on genetic markers
+│   ├── 5_Select similar varieties.R       # Filters and selects varieties based on genetic similarity
+│   └── 6_Phylogenetic_tree.R              # Constructs UPGMA phylogenetic trees (Fan/Encircle style)
+├── .gitignore                             # Specifies files to be ignored by Git
+├── LICENSE                                # License information
+├── README.md                              # Project documentation
+└── requirements.txt                       # List of dependencies
