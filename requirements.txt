@@ -1,6 +1,28 @@
-adegenet
-poppr
-ape
+# R version
+R (>= 4.3.0)
+
+# CRAN packages
 ggplot2
 dplyr
+ape
+ggtree
 pheatmap
+igraph
+ade4
+cluster
+corrplot
+ggcorrplot
+readxl
+viridis
+RColorBrewer
+ggrepel
+vcd
+psych
+reshape2
+gridExtra
+Hmisc
+showtext
+here
+
+# Bioconductor packages
+ggtree (via BiocManager)
